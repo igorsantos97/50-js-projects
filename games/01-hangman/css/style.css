@@ -40,3 +40,42 @@ a {
 button {
   cursor: pointer;
 }
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 12px;
+}
+
+.header {
+  background: #eee;
+  padding: 16px 0;
+  margin-bottom: 32px;
+}
+
+.header-content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left h1 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.header-left h1 span {
+  color: #fa1;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header p {
+  margin-top: 8px;
+}
+
+.header p b {
+  text-transform: uppercase;
+}

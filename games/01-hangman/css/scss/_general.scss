@@ -1,0 +1,40 @@
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 12px;
+}
+
+.header {
+  background: #eee;
+  padding: 16px 0;
+  margin-bottom: 32px;
+
+  &-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-left {
+    h1 {
+      font-size: 18px;
+      text-transform: uppercase;
+
+      span {
+        color: $yellow;
+      }
+    }
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  p {
+    margin-top: 8px;
+
+    b {
+      text-transform: uppercase;
+    }
+  }
+}
