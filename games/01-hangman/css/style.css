@@ -50,7 +50,7 @@ button {
 .header {
   background: #eee;
   padding: 16px 0;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 
 .header-content {
@@ -78,4 +78,58 @@ button {
 
 .header p b {
   text-transform: uppercase;
+}
+
+.main .word {
+  align-items: center;
+  background: #e0e0e0;
+  border-bottom: 2px solid #b1b1b1;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+  margin-bottom: 32px;
+}
+
+.main .word-letter {
+  align-items: center;
+  background: #fff;
+  border-bottom: 2px solid #4587ff;
+  display: flex;
+  font-size: 22px;
+  justify-content: center;
+  height: 42px;
+  width: 42px;
+}
+
+.main .word-letter + .word-letter {
+  margin-left: 8px;
+}
+
+.main .word-letter.none {
+  background: #e0e0e0;
+  border: none;
+}
+
+.main .actions {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.main .actions-left h2 {
+  margin-bottom: 16px;
+}
+
+.main .actions-left .keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 550px;
+}
+
+.main .actions-left .keyboard button {
+  height: 40px;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 40px;
+  margin: 2px;
 }

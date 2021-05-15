@@ -7,7 +7,7 @@
 .header {
   background: #eee;
   padding: 16px 0;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 
   &-content {
     align-items: center;
@@ -35,6 +35,64 @@
 
     b {
       text-transform: uppercase;
+    }
+  }
+}
+
+.main {
+  .word {
+    align-items: center;
+    background: #e0e0e0;
+    border-bottom: 2px solid #b1b1b1;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px;
+    margin-bottom: 32px;
+
+    &-letter {
+      align-items: center;
+      background: $white;
+      border-bottom: 2px solid #4587ff;
+      display: flex;
+      font-size: 22px;
+      justify-content: center;
+      height: 42px;
+      width: 42px;
+
+      & + .word-letter {
+        margin-left: 8px;
+      }
+
+      &.none {
+        background: #e0e0e0;
+        border: none;
+      }
+    }
+  }
+
+  .actions {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1.3fr 1fr;
+
+    &-left {
+      h2 {
+        margin-bottom: 16px;
+      }
+
+      .keyboard {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 550px;
+
+        button {
+          height: 40px;
+          font-size: 20px;
+          text-transform: uppercase;
+          width: 40px;
+          margin: 2px;
+        }
+      }
     }
   }
 }
