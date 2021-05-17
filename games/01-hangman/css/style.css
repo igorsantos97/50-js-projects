@@ -42,6 +42,50 @@ button {
   cursor: pointer;
 }
 
+button[type='submit'] {
+  background: #17c717;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 16px;
+  height: 42px;
+  margin-top: 20px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+button[type='submit']:hover, button[type='submit']:focus {
+  background: #0fad0f;
+}
+
+input {
+  border: solid 1.5px;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  height: 42px;
+  margin: 4px 0 14px;
+  padding: 12px 6px;
+  width: 100%;
+}
+
+.title-modal {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+@keyframes toRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -201,4 +245,33 @@ button {
 .main .actions-left .keyboard button:hover {
   background: #3077f9;
   border-color: #3077f9;
+}
+
+.word-modal {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.word-modal-content {
+  animation: toRight forwards 0.3s;
+  animation-delay: 0.3s;
+  align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  height: 440px;
+  justify-content: center;
+  opacity: 0;
+  padding: 32px 22px;
+  width: 460px;
+}
+
+.word-modal-content form {
+  width: 100%;
 }
