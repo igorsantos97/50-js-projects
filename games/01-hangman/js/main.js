@@ -9,9 +9,30 @@ function handleClickModal(e) {
 
   if (wordInput.value.length > 0) {
     initialModal.remove();
+    generateLettersBox();
   } else {
     return null;
   }
+}
+
+function generateLettersBox() {
+  const wordContainer = document.querySelector('[data-word="container"]');
+  const arrayWord = wordInput.value.split('');
+
+  arrayWord.forEach((letter) => {
+    switch (letter) {
+      case ' ':
+        wordContainer.innerHTML += `<div class="word-letter none"></div>`;
+        hits++;
+        break;
+      case '-':
+        wordContainer.innerHTML += `<div class="word-letter">-</div>`;
+        hits++;
+        break;
+      default:
+        wordContainer.innerHTML += `<div class="word-letter"></div>`;
+    }
+  });
 }
 
 formInitial.addEventListener('submit', handleClickModal);
