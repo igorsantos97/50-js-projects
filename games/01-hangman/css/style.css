@@ -16,6 +16,7 @@ p {
 }
 
 body {
+  background: #f7f7f7;
   color: #666;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -48,7 +49,7 @@ button {
 }
 
 .header {
-  background: #eee;
+  color: #fff;
   padding: 16px 0;
   margin-bottom: 64px;
 }
@@ -59,20 +60,62 @@ button {
   justify-content: space-between;
 }
 
-.header-left h1 {
+.header-left {
+  margin-right: 32px;
+}
+
+.header-left .btn-menu {
+  align-items: center;
+  background: #4587ff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 50px;
+  transition: 0.3s;
+  width: 50px;
+}
+
+.header-left .btn-menu:hover {
+  background: #3077f9;
+}
+
+.header-left .btn-menu span {
+  background: #fff;
+  height: 3px;
+  display: block;
+  width: 24px;
+}
+
+.header-left .btn-menu span + span {
+  margin-top: 5px;
+}
+
+.header-right {
+  align-items: flex-start;
+  background: #4587ff;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.header-right div:nth-child(2) {
+  text-align: right;
+}
+
+.header h1 {
   font-size: 18px;
   text-transform: uppercase;
 }
 
-.header-left h1 span {
-  color: #fa1;
+.header h1 span {
+  color: #fc6;
 }
 
-.header-right {
-  text-align: right;
-}
-
-.header p {
+.header p:not(:first-child) {
   margin-top: 8px;
 }
 
@@ -82,23 +125,29 @@ button {
 
 .main .word {
   align-items: center;
-  background: #e0e0e0;
-  border-bottom: 2px solid #b1b1b1;
+  background: #eaeaea;
+  color: #666;
+  border-bottom: 1px solid #b1b1b1;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px #dedede;
   display: flex;
   justify-content: center;
   padding: 32px 16px;
   margin-bottom: 32px;
+  min-height: 110px;
 }
 
 .main .word-letter {
   align-items: center;
   background: #fff;
   border-bottom: 2px solid #4587ff;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 0px 4px #dedede;
   display: flex;
   font-size: 22px;
   justify-content: center;
-  height: 42px;
-  width: 42px;
+  height: 46px;
+  width: 46px;
 }
 
 .main .word-letter + .word-letter {
@@ -106,8 +155,9 @@ button {
 }
 
 .main .word-letter.none {
-  background: #e0e0e0;
+  background: #eaeaea;
   border: none;
+  box-shadow: none;
 }
 
 .main .actions {
@@ -117,19 +167,38 @@ button {
 }
 
 .main .actions-left h2 {
+  font-size: 18px;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .main .actions-left .keyboard {
   display: flex;
   flex-wrap: wrap;
   max-width: 550px;
+  margin-left: -4px;
 }
 
 .main .actions-left .keyboard button {
-  height: 40px;
+  background: #4587ff;
+  border: 2px solid #4587ff;
+  border-radius: 4px;
+  color: #fff;
+  height: 42px;
   font-size: 20px;
+  transition: 0.3s;
+  margin: 4px;
   text-transform: uppercase;
-  width: 40px;
-  margin: 2px;
+  width: 42px;
+}
+
+.main .actions-left .keyboard button:disabled, .main .actions-left .keyboard button:disabled:hover {
+  background: #bbb;
+  color: #797979;
+  border-color: #bbb;
+}
+
+.main .actions-left .keyboard button:hover {
+  background: #3077f9;
+  border-color: #3077f9;
 }

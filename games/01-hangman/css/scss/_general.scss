@@ -5,7 +5,7 @@
 }
 
 .header {
-  background: #eee;
+  color: $white;
   padding: 16px 0;
   margin-bottom: 64px;
 
@@ -16,22 +16,64 @@
   }
 
   &-left {
-    h1 {
-      font-size: 18px;
-      text-transform: uppercase;
+    margin-right: 32px;
+
+    .btn-menu {
+      align-items: center;
+      background: $blue;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 50px;
+      transition: 0.3s;
+      width: 50px;
+
+      &:hover {
+        background: $blue-hover;
+      }
 
       span {
-        color: $yellow;
+        background: $white;
+        height: 3px;
+        display: block;
+        width: 24px;
+
+        & + span {
+          margin-top: 5px;
+        }
       }
     }
   }
 
   &-right {
-    text-align: right;
+    align-items: flex-start;
+    background: $blue;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 4px;
+    flex: 1;
+
+    div:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  h1 {
+    font-size: 18px;
+    text-transform: uppercase;
+
+    span {
+      color: $yellow;
+    }
   }
 
   p {
-    margin-top: 8px;
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
 
     b {
       text-transform: uppercase;
@@ -42,30 +84,36 @@
 .main {
   .word {
     align-items: center;
-    background: #e0e0e0;
-    border-bottom: 2px solid #b1b1b1;
+    background: #eaeaea;
+    color: #666;
+    border-bottom: 1px solid #b1b1b1;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px #dedede;
     display: flex;
     justify-content: center;
     padding: 32px 16px;
     margin-bottom: 32px;
+    min-height: 110px;
 
     &-letter {
       align-items: center;
       background: $white;
-      border-bottom: 2px solid #4587ff;
+      border-bottom: 2px solid $blue;
+      border-radius: 4px 4px 0 0;
+      box-shadow: 0px 0px 4px #dedede;
       display: flex;
       font-size: 22px;
       justify-content: center;
-      height: 42px;
-      width: 42px;
+      height: 46px;
+      width: 46px;
 
       & + .word-letter {
         margin-left: 8px;
       }
-
       &.none {
-        background: #e0e0e0;
+        background: #eaeaea;
         border: none;
+        box-shadow: none;
       }
     }
   }
@@ -77,20 +125,40 @@
 
     &-left {
       h2 {
+        font-size: 18px;
         margin-bottom: 16px;
+        text-transform: uppercase;
       }
 
       .keyboard {
         display: flex;
         flex-wrap: wrap;
         max-width: 550px;
+        margin-left: -4px;
 
         button {
-          height: 40px;
+          background: $blue;
+          border: 2px solid $blue;
+          border-radius: 4px;
+          color: $white;
+          height: 42px;
           font-size: 20px;
+          transition: 0.3s;
+          margin: 4px;
           text-transform: uppercase;
-          width: 40px;
-          margin: 2px;
+          width: 42px;
+
+          &:disabled,
+          &:disabled:hover {
+            background: #bbb;
+            color: #797979;
+            border-color: #bbb;
+          }
+
+          &:hover {
+            background: $blue-hover;
+            border-color: $blue-hover;
+          }
         }
       }
     }
