@@ -3,13 +3,31 @@
   max-width: 1600px;
 }
 
-.padding {
-  padding: 1% 2%;
+.padding-x {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.padding-y {
+  padding-bottom: 1%;
+  padding-top: 1%;
 }
 
 .row {
   position: relative;
   width: 100%;
+}
+
+.btn {
+  background: #f42c37;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  line-height: 19px;
+  padding: 16px 35px;
+  text-transform: capitalize;
+  text-shadow: 0 0 10px transparent;
 }
 
 .header {

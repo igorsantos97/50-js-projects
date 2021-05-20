@@ -30,18 +30,46 @@ button {
   cursor: pointer;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1600px;
 }
 
-.padding {
-  padding: 1% 2%;
+.padding-x {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.padding-y {
+  padding-bottom: 1%;
+  padding-top: 1%;
 }
 
 .row {
   position: relative;
   width: 100%;
+}
+
+.btn {
+  background: #f42c37;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  line-height: 19px;
+  padding: 16px 35px;
+  text-transform: capitalize;
+  text-shadow: 0 0 10px transparent;
 }
 
 .header-left {
@@ -80,4 +108,79 @@ button {
 
 .header ul a.active {
   color: #000;
+}
+
+.home-main-content img {
+  margin-top: -10px;
+  padding: 74px 74px 0px 74px;
+  z-index: 99;
+}
+
+.home-main-content .home-main-content-title {
+  align-items: flex-start;
+  background-image: linear-gradient(105deg, #dcdcdc 54%, #eee 68%);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 17.5% 0 7% 9.5%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.home-main-content .home-main-content-title h3 {
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -1.3px;
+}
+
+.home-main-content .home-main-content-title h3 span {
+  display: block;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 120px;
+  letter-spacing: -2px;
+}
+
+.home-main-content .home-main-content-title h2 {
+  color: #fff;
+  font-size: 194px;
+  font-weight: 900;
+  letter-spacing: -2.9px;
+  line-height: 140px;
+  margin-left: -10px;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.home-main-content .home-main-content-title a {
+  margin-top: 30px;
+}
+
+.home-main-content .home-main-content-description {
+  position: absolute;
+  top: 67%;
+  right: 0;
+  text-align: right;
+  max-width: 420px;
+  padding-right: 136px;
+}
+
+.home-main-content .home-main-content-description h2 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-bottom: 8px;
+}
+
+.home-main-content .home-main-content-description p {
+  color: #00000099;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 400;
 }
