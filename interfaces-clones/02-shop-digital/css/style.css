@@ -5,9 +5,12 @@
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
+  text-rendering: optimizelegibility;
+  font-weight: 500;
 }
 
 img {
@@ -25,4 +28,56 @@ a {
 
 button {
   cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.padding {
+  padding: 1% 2%;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.header-left {
+  align-items: center;
+  display: flex;
+}
+
+.header-left img {
+  margin-right: 68px;
+}
+
+.header-right a {
+  color: #000 !important;
+}
+
+.header .row {
+  align-items: center;
+  display: flex;
+  height: 63px;
+  justify-content: space-between;
+}
+
+.header ul {
+  align-items: center;
+  display: flex;
+}
+
+.header ul li:nth-child(1) a {
+  padding-left: 0;
+}
+
+.header ul a {
+  color: #00000066;
+  padding: 12px 21px;
+}
+
+.header ul a.active {
+  color: #000;
 }
