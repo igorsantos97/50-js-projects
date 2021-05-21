@@ -93,3 +93,228 @@
     }
   }
 }
+
+.home-products {
+  &-grid {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 40px;
+  }
+
+  &-box {
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    animation-fill-mode: both !important;
+    background: #c1c1c1;
+    border-radius: 25px;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s,
+      box-shadow 0.3s;
+    opacity: 0;
+    position: relative;
+
+    &.box-large {
+      div {
+        padding-left: 12%;
+
+        h3 {
+          font-size: 65px;
+        }
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      height: 404px;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      height: 389px;
+    }
+
+    &:nth-child(1) {
+      animation: animaProductsHomeToLeft 1s;
+      background-image: linear-gradient(300deg, #363636 13%, #222 38%);
+      opacity: 0;
+
+      h3 {
+        color: #444;
+      }
+
+      img {
+        bottom: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      animation: animaProductsHomeToLeft 1s;
+      animation-delay: 0.15s;
+      background-image: radial-gradient(
+        at center center,
+        #fec62e 0%,
+        #fec62e 100%
+      );
+
+      img {
+        right: -82px;
+        top: 36px;
+      }
+
+      h3 {
+        color: #ffd76a;
+      }
+
+      a.btn-edit {
+        background: #fff;
+        color: #fec62e;
+      }
+    }
+
+    &:nth-child(3) {
+      animation: animaProductsHomeToLeft 1s;
+      animation-delay: 0.3s;
+      background-image: linear-gradient(90deg, #f42c37 61%, #ff4e59 100%);
+      grid-column: 3/5;
+
+      img {
+        right: -66px;
+      }
+
+      h3 {
+        color: #f6565f;
+      }
+
+      a.btn {
+        background: #fff;
+        color: #f42c37;
+      }
+    }
+
+    &:nth-child(4) {
+      animation: animaProductsHomeToRight 1s;
+      animation-delay: 0.3s;
+      background-image: linear-gradient(180deg, #d4d4d4 0%, #eef0f3 100%);
+      grid-column: 1/3;
+
+      img {
+        right: 60px;
+        top: 40px;
+      }
+
+      div {
+        bottom: auto;
+        top: 95px;
+      }
+
+      h4 {
+        color: #000;
+      }
+
+      h3 {
+        color: #fff;
+      }
+    }
+
+    &:nth-child(5) {
+      animation: animaProductsHomeToRight 1s;
+      animation-delay: 0.15s;
+      background-color: #2dd06f;
+      grid-column: 3/4;
+      overflow: hidden;
+
+      div {
+        top: 40px;
+      }
+
+      img {
+        bottom: 0;
+        min-width: 520px;
+        right: -104px;
+      }
+
+      h3 {
+        color: #57d68b;
+      }
+
+      a.btn {
+        background: #fff;
+        color: #2dd06f;
+      }
+    }
+
+    &:nth-child(6) {
+      animation: animaProductsHomeToRight 1s;
+      background-image: linear-gradient(180deg, #1478ff 0%, #1891ff 100%);
+      overflow: hidden;
+
+      img {
+        bottom: -45px;
+        max-width: 100%;
+        min-width: 420px;
+        right: -58px;
+      }
+
+      div {
+        top: 40px;
+      }
+
+      h4 {
+        color: #fff;
+      }
+
+      h3 {
+        color: #3a98ff;
+      }
+
+      a.btn {
+        background: #fff;
+        color: #1478ff;
+      }
+    }
+
+    img {
+      position: absolute;
+      z-index: 99;
+    }
+
+    div {
+      align-items: flex-start;
+      bottom: 13.2%;
+      display: flex;
+      flex-direction: column;
+      padding-left: 10%;
+      position: absolute;
+
+      h4 {
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: -0.4px;
+        line-height: 1.5;
+
+        span {
+          font-size: 30px;
+          font-weight: 600;
+          display: block;
+        }
+      }
+
+      h3 {
+        font-size: 50px;
+        font-weight: 900;
+        line-height: 37px;
+        margin-bottom: 24px;
+        margin-top: 12px;
+        text-transform: uppercase;
+      }
+
+      .btn-edit {
+        padding: 10px 30px;
+        z-index: 999;
+      }
+    }
+  }
+}

@@ -29,3 +29,25 @@
     transform: scale(1);
   }
 }
+
+@keyframes animaProductsHomeToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-75px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes animaProductsHomeToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(75px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
