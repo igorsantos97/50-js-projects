@@ -40,6 +40,37 @@ p {
   padding: 0;
 }
 
+@keyframes toOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes toTop {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animaMainBanner {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: 1600px;
@@ -111,12 +142,16 @@ p {
 }
 
 .home-main-content img {
+  animation: toOpacity 1s forwards;
+  animation-delay: 1s;
   margin-top: -10px;
+  opacity: 0;
   padding: 74px 74px 0px 74px;
   z-index: 99;
 }
 
 .home-main-content .home-main-content-title {
+  animation: animaMainBanner 1s forwards ease-in-out;
   align-items: flex-start;
   background-image: linear-gradient(105deg, #dcdcdc 54%, #eee 68%);
   border-radius: 25px;
@@ -131,12 +166,16 @@ p {
 }
 
 .home-main-content .home-main-content-title h3 {
+  animation: toTop forwards ease 1.3s;
+  animation-delay: 0.8s;
   color: #000;
   font-family: 'Poppins', sans-serif;
   font-size: 30px;
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -1.3px;
+  opacity: 0;
+  transition: all 0.25s ease-out;
 }
 
 .home-main-content .home-main-content-title h3 span {
@@ -148,6 +187,8 @@ p {
 }
 
 .home-main-content .home-main-content-title h2 {
+  animation: toTop forwards ease 1.3s;
+  animation-delay: 1s;
   color: #fff;
   font-size: 194px;
   font-weight: 900;
@@ -155,19 +196,26 @@ p {
   line-height: 140px;
   margin-left: -10px;
   margin-top: 6px;
+  opacity: 0;
   text-transform: uppercase;
 }
 
-.home-main-content .home-main-content-title a {
+.home-main-content .home-main-content-title a.btn {
+  animation: toTop forwards ease 1.3s;
+  animation-delay: 1.3s;
   margin-top: 30px;
+  opacity: 0;
 }
 
 .home-main-content .home-main-content-description {
+  animation: toOpacity 1s forwards;
+  animation-delay: 1.7s;
   position: absolute;
   top: 67%;
   right: 0;
   text-align: right;
   max-width: 420px;
+  opacity: 0;
   padding-right: 136px;
 }
 
@@ -183,4 +231,10 @@ p {
   font-size: 15px;
   line-height: 23px;
   font-weight: 400;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1679px) {
+  .home-main-content .home-main-content-title h2 {
+    font-size: 11.5vw;
+  }
 }
