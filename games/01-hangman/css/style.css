@@ -120,12 +120,6 @@ input {
   display: flex;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 12px;
-}
-
 .header {
   color: #fff;
   padding: 16px 0;
@@ -265,6 +259,12 @@ input {
 
 .header p b {
   text-transform: uppercase;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 12px;
 }
 
 .main .word {
