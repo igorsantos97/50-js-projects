@@ -71,6 +71,7 @@ input {
 }
 
 .title-modal {
+  color: #333;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -112,12 +113,43 @@ input {
   width: 460px;
 }
 
+.modal-content h2 {
+  position: absolute;
+  top: 32px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.modal .btn-close {
+  background: #e24f47;
+  border: solid 2px #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #e24f47;
+  color: #fff;
+  font-size: 22px;
+  height: 50px;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 50px;
+}
+
 .conclued-modal {
   display: none;
 }
 
 .conclued-modal.active {
   display: flex;
+}
+
+.conclued-modal h3 {
+  color: #333;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.conclued-modal img {
+  margin-bottom: 32px;
 }
 
 .header {
@@ -287,8 +319,8 @@ input {
   border-radius: 4px 4px 0 0;
   display: flex;
   font-size: 22px;
-  justify-content: center;
   height: 46px;
+  justify-content: center;
   width: 46px;
 }
 

@@ -72,6 +72,7 @@ input {
 }
 
 .title-modal {
+  color: #333;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -111,6 +112,27 @@ input {
     opacity: 0;
     padding: 32px 22px;
     width: 460px;
+
+    h2 {
+      position: absolute;
+      top: 32px;
+      text-transform: uppercase;
+      color: $black;
+    }
+  }
+
+  .btn-close {
+    background: $pink;
+    border: solid 2px $white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px $pink;
+    color: $white;
+    font-size: 22px;
+    height: 50px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 50px;
   }
 }
 
@@ -119,5 +141,15 @@ input {
 
   &.active {
     display: flex;
+  }
+
+  h3 {
+    color: $black;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  img {
+    margin-bottom: 32px;
   }
 }

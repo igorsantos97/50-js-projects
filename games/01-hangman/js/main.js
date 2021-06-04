@@ -14,7 +14,11 @@ function handleClickModal(e) {
     initialModal.remove();
     generateLettersBox();
   } else {
-    return null;
+    alertMessage = document.createElement('div');
+    alertMessage.innerText = 'Necessário inserir uma palavra!';
+    alertMessage.classList.add('alert-message-form');
+
+    wordInput.style.borderColor = '#ff3131';
   }
 }
 
