@@ -14,16 +14,22 @@
     <div class="container">
       <div class="header-content">
         <div class="header-left">
-          <button class="btn-menu">
+          <button class="btn-menu" data-menu="btn">
             <span></span>
             <span></span>
             <span></span>
           </button>
+          <nav data-menu="nav" data-menu="nav">
+            <ul>
+              <li><a href="#">Reiniciar Jogo</a></li>
+            </ul>
+          </nav>
         </div>
+
         <div class="header-right">
           <div>
             <h1><span>Jogo da forca:</span> Descubra a palavra e salve o mikão!</h1>
-            <p><b>Dica:</b> Jogador do Barcelona</p>
+            <p>Dica: <span data-tip>Jogador do Barcelona</span></p>
           </div>
         </div>
       </div>
@@ -77,8 +83,8 @@
     </div>
   </main>
 
-  <div class="word-modal" data-modal="initial">
-    <div class="word-modal-content">
+  <div class="modal word-modal" data-modal="initial">
+    <div class="modal-content">
       <form data-modal="form">
         <h3 class="title-modal">Digite a palavra que será descoberta:</h3>
         <input data-modal="word-input" type="text" placeholder="Ex: Barcelona">
@@ -86,6 +92,13 @@
         <input data-modal="tip-input" type="text" placeholder="Ex: Espanha">
         <button type="submit">Confirmar</button>
       </form>
+    </div>
+  </div>
+
+  <div class="modal conclued-modal" data-conclued-modal="container">
+    <div class="modal-content">
+      <h3>Parabéns você conseguiu :)</h3>
+      <button data-conclued-modal="close">Fechar</button>
     </div>
   </div>
 

@@ -21,6 +21,9 @@ function handleClickModal(e) {
 function generateLettersBox() {
   const wordContainer = document.querySelector('[data-word="container"]');
   const keyboardButtons = document.querySelectorAll('[data-keyboard] button');
+  const tipArea = document.querySelector('[data-tip]');
+
+  tipArea.innerText = tipInput.value || 'Nenhuma';
 
   wordArray.forEach((letter) => {
     switch (letter) {
@@ -49,18 +52,38 @@ function handleClickBtnKeyboard(e) {
 
   targetButton.disabled = true;
 
+  // Verificando antes de percorrer se a não existe letra existe
+  // if(!wordInput.includes(targetButton)) {
+  //   console.log('Errou');
+  // }
+
   wordArray.forEach((letter, index) => {
-    if (valueButton.toLowerCase() === letter) {
+    if (valueButton.toLowerCase() === letter.toLowerCase()) {
       wordBoxs[index].innerText = valueButton;
       hits++;
-    } else {
-      console.log('Errou');
     }
+    // else {
+    //   console.log('Errou');
+    // }
   });
 
   if (hits === wordArray.length) {
-    console.log('Acabou');
+    const concluedModal = document.querySelector(
+      '[data-conclued-modal="container"]',
+    );
+
+    concluedModal.classList.add('active');
   }
 }
 
 formInitial.addEventListener('submit', handleClickModal);
+
+const btnMobile = document.querySelector('[data-menu="btn"]');
+const btnNav = document.querySelector('[data-menu="nav"]');
+
+function handleClickMenuMobile() {
+  btnMobile.classList.toggle('active');
+  btnNav.classList.toggle('active');
+}
+
+btnMobile.addEventListener('click', handleClickMenuMobile);

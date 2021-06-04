@@ -16,7 +16,7 @@ p {
 }
 
 body {
-  background: #f7f7f7;
+  background: #f26957;
   color: #666;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -86,6 +86,40 @@ input {
   }
 }
 
+.modal {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.modal-content {
+  animation: toRight forwards 0.3s;
+  animation-delay: 0.3s;
+  align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 440px;
+  justify-content: center;
+  opacity: 0;
+  padding: 32px 22px;
+  width: 460px;
+}
+
+.conclued-modal {
+  display: none;
+}
+
+.conclued-modal.active {
+  display: flex;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -106,29 +140,95 @@ input {
 
 .header-left {
   margin-right: 32px;
+  position: relative;
+}
+
+.header-left nav {
+  background: #333;
+  border-radius: 5px;
+  display: none;
+  padding: 22px 12px;
+  position: absolute;
+  left: 0;
+  width: 130px;
+}
+
+.header-left nav.active {
+  animation: animaMenu 0.3s forwards;
+  display: block;
+}
+
+@keyframes animaMenu {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.header-left nav::before {
+  content: '';
+  border-bottom: 10px solid #333;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  display: block;
+  height: 0;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  width: 0;
+}
+
+.header-left nav li + li {
+  margin-top: 22px;
+}
+
+.header-left nav a {
+  color: #fff;
 }
 
 .header-left .btn-menu {
   align-items: center;
-  background: #4587ff;
+  background: #e24f47;
   border: none;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   height: 50px;
   transition: 0.3s;
   width: 50px;
 }
 
+.header-left .btn-menu.active {
+  background: #333;
+}
+
+.header-left .btn-menu.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.header-left .btn-menu.active span:nth-child(2) {
+  display: none;
+}
+
+.header-left .btn-menu.active span:nth-child(3) {
+  margin-top: -3px;
+  transform: rotate(-45deg);
+}
+
 .header-left .btn-menu:hover {
-  background: #3077f9;
+  background: #333;
 }
 
 .header-left .btn-menu span {
   background: #fff;
   height: 3px;
   display: block;
+  transition: 0.3s;
   width: 24px;
 }
 
@@ -138,7 +238,7 @@ input {
 
 .header-right {
   align-items: flex-start;
-  background: #4587ff;
+  background: #e24f47;
   display: flex;
   justify-content: space-between;
   padding: 16px;
@@ -169,11 +269,10 @@ input {
 
 .main .word {
   align-items: center;
-  background: #eaeaea;
-  color: #666;
-  border-bottom: 1px solid #b1b1b1;
+  background: #e24f47;
+  color: #fff;
+  border-bottom: 1px solid #bd3f38;
   border-radius: 4px;
-  box-shadow: 0px 0px 4px #dedede;
   display: flex;
   justify-content: center;
   padding: 32px 16px;
@@ -183,10 +282,9 @@ input {
 
 .main .word-letter {
   align-items: center;
-  background: #fff;
-  border-bottom: 2px solid #4587ff;
+  background: #333;
+  border-bottom: 2px solid #fff;
   border-radius: 4px 4px 0 0;
-  box-shadow: 0px 0px 4px #dedede;
   display: flex;
   font-size: 22px;
   justify-content: center;
@@ -199,7 +297,7 @@ input {
 }
 
 .main .word-letter.none {
-  background: #eaeaea;
+  background: #e24f47;
   border: none;
   box-shadow: none;
 }
@@ -214,6 +312,7 @@ input {
   font-size: 18px;
   margin-bottom: 16px;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .main .actions-left .keyboard {
@@ -224,10 +323,10 @@ input {
 }
 
 .main .actions-left .keyboard button {
-  background: #4587ff;
-  border: 2px solid #4587ff;
+  background: #ece7c9;
+  border: 2px solid #ece7c9;
   border-radius: 4px;
-  color: #fff;
+  color: #222;
   height: 42px;
   font-size: 20px;
   transition: 0.3s;
@@ -243,35 +342,11 @@ input {
 }
 
 .main .actions-left .keyboard button:hover {
-  background: #3077f9;
-  border-color: #3077f9;
+  background: #bd3f38;
+  border-color: #bd3f38;
+  color: #fff;
 }
 
-.word-modal {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.word-modal-content {
-  animation: toRight forwards 0.3s;
-  animation-delay: 0.3s;
-  align-items: center;
-  background: #fff;
-  border-radius: 4px;
-  display: flex;
-  height: 440px;
-  justify-content: center;
-  opacity: 0;
-  padding: 32px 22px;
-  width: 460px;
-}
-
-.word-modal-content form {
+.word-modal form {
   width: 100%;
 }
