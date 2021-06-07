@@ -1,4 +1,5 @@
 import initHandleClickBtnKeyboard from './handleClickKeyboard.js';
+import { globalVariables } from './globalVariables.js';
 
 export default function initGame() {
   const initialModal = document.querySelector('[data-modal="initial"]');
@@ -6,7 +7,6 @@ export default function initGame() {
   const wordInput = formInitial.querySelector('[data-modal="word-input"]');
   const tipInput = formInitial.querySelector('[data-modal="tip-input"]');
 
-  let hits = 0;
   let wordArray;
 
   function generateLettersBox() {
@@ -20,19 +20,22 @@ export default function initGame() {
       switch (letter) {
         case ' ':
           wordContainer.innerHTML += `<div data-word="letter" class="word-letter none"></div>`;
-          hits++;
+          globalVariables.hits++;
           break;
         case '-':
           wordContainer.innerHTML += `<div data-word="letter" class="word-letter">-</div>`;
-          hits++;
+          globalVariables.hits++;
           break;
         default:
           wordContainer.innerHTML += `<div data-word="letter" class="word-letter"></div>`;
       }
     });
 
-    keyboardButtons.forEach((buttons) => {
-      buttons.addEventListener('click', initHandleClickBtnKeyboard);
+    keyboardButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        initHandleClickBtnKeyboard(button, wordArray);
+        console.log('Inicial' + globalVariables.hits);
+      });
     });
   }
 
