@@ -46,6 +46,10 @@
     grid-template-columns: 1.3fr 1fr;
 
     &-left {
+      border-radius: 4px;
+      padding: 16px;
+      border: solid $pink 2px;
+
       h2 {
         font-size: 18px;
         margin-bottom: 16px;
@@ -86,11 +90,26 @@
         }
       }
     }
+
+    &-right {
+      background: $pink;
+      padding: 16px;
+    }
   }
 }
 
 .word-modal {
   form {
     width: 100%;
+  }
+}
+
+.life {
+  display: flex;
+
+  li {
+    & + li {
+      margin-left: 5px;
+    }
   }
 }

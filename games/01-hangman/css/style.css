@@ -152,6 +152,11 @@ input {
   margin-bottom: 32px;
 }
 
+.fa-heart {
+  font-size: 30px;
+  color: #fff;
+}
+
 .header {
   color: #fff;
   padding: 16px 0;
@@ -340,6 +345,12 @@ input {
   grid-template-columns: 1.3fr 1fr;
 }
 
+.main .actions-left {
+  border-radius: 4px;
+  padding: 16px;
+  border: solid #e24f47 2px;
+}
+
 .main .actions-left h2 {
   font-size: 18px;
   margin-bottom: 16px;
@@ -379,6 +390,19 @@ input {
   color: #fff;
 }
 
+.main .actions-right {
+  background: #e24f47;
+  padding: 16px;
+}
+
 .word-modal form {
   width: 100%;
+}
+
+.life {
+  display: flex;
+}
+
+.life li + li {
+  margin-left: 5px;
 }

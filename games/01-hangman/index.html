@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[Project 01] - Hangman</title>
   <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -43,7 +45,7 @@
           <!-- Dynamic Content -->
         </section>
 
-        <section class="actions">
+        <section class="actions main-content-left">
           <div class="actions-left">
             <h2>Letras</h2>
             <div class="keyboard" data-keyboard>
@@ -75,15 +77,36 @@
               <button>z</button>
             </div>
           </div>
-          <div class="actions-right">
+          <div class="actions-right main-content-left">
             <p>the guy</p>
+            <ul class="life">
+
+              <li>
+                <i class="fas fa-heart"></i>
+              </li>
+              <li>
+                <i class="fas fa-heart"></i>
+              </li>
+              <li>
+                <i class="fas fa-heart"></i>
+              </li>
+              <li>
+                <i class="fas fa-heart"></i>
+              </li>
+              <li>
+                <i class="fas fa-heart"></i>
+              </li>
+              <li>
+                <i class="far fa-heart"></i>
+              </li>
+            </ul>
           </div>
         </section>
       </div>
     </div>
   </main>
 
-  <div class="modal word-modal" data-modal="initial">
+  <div class="modal word-modal" data-modal="initial" style="display: none">
     <div class="modal-content">
       <img src="https://image.flaticon.com/icons/png/512/777/777115.png" style="width: 36px; margin-top: -40px; margin-bottom: 13px;" alt="">
       <h2>Seja bem-vindo</h2>
