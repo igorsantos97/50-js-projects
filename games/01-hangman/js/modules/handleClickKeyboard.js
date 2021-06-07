@@ -1,3 +1,4 @@
+import initCloseModalResultFinal from './closeModalResultFinal.js';
 import { globalVariables } from './globalVariables.js';
 
 export default function initHandleClickBtnKeyboard(elementTarget, wordArray) {
@@ -27,6 +28,7 @@ export default function initHandleClickBtnKeyboard(elementTarget, wordArray) {
     );
 
     concluedModal.classList.add('active');
+
+    initCloseModalResultFinal();
   }
-  console.log(globalVariables.hits);
 }
