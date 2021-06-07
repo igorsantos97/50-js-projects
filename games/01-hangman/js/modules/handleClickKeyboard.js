@@ -4,22 +4,29 @@ import { globalVariables } from './globalVariables.js';
 export default function initHandleClickBtnKeyboard(elementTarget, wordArray) {
   const valueButton = elementTarget.innerText;
   const wordBoxs = document.querySelectorAll('[data-word="letter"]');
+  let listHeartActive = document.querySelectorAll('[data-life] i.fas');
 
   elementTarget.disabled = true;
 
   // Verificando antes de percorrer se a não existe letra existe
-  // if(!wordInput.includes(elementTarget)) {
-  //   console.log('Errou');
-  // }
+  if (!wordArray.includes(valueButton.toLowerCase())) {
+    const lastHearActive = listHeartActive[listHeartActive.length - 1];
+    lastHearActive.className = lastHearActive.className.replace('fas', 'far');
+
+    // Updated ListHeartActive
+    listHeartActive = document.querySelectorAll('[data-life] i.fas');
+    if (!listHeartActive.length) {
+      console.log('Acabou o câo');
+    }
+
+    return;
+  }
 
   wordArray.forEach((letter, index) => {
     if (valueButton.toLowerCase() === letter.toLowerCase()) {
       wordBoxs[index].innerText = valueButton;
       globalVariables.hits++;
     }
-    // else {
-    //   console.log('Errou');
-    // }
   });
 
   if (globalVariables.hits === wordArray.length) {

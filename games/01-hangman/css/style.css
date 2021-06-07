@@ -403,6 +403,6 @@ input {
   display: flex;
 }
 
-.life li + li {
+.life i + i {
   margin-left: 5px;
 }

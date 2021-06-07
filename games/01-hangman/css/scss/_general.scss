@@ -107,8 +107,8 @@
 .life {
   display: flex;
 
-  li {
-    & + li {
+  i {
+    & + i {
       margin-left: 5px;
     }
   }
