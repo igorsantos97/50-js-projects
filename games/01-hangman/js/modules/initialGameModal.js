@@ -9,9 +9,27 @@ export default function initGame() {
 
   let wordArray;
 
+  function handleClickInitGame(e) {
+    e.preventDefault();
+
+    if (wordInput.value.length > 0) {
+      wordArray = wordInput.value
+        .split('')
+        .map((letter) => letter.toLowerCase());
+
+      initialModal.remove();
+      generateLettersBox();
+    } else {
+      alertMessage = document.createElement('div');
+      alertMessage.innerText = 'Necessário inserir uma palavra!';
+      alertMessage.classList.add('alert-message-form');
+
+      wordInput.style.borderColor = '#ff3131';
+    }
+  }
+
   function generateLettersBox() {
     const wordContainer = document.querySelector('[data-word="container"]');
-    const keyboardButtons = document.querySelectorAll('[data-keyboard] button');
     const tipArea = document.querySelector('[data-tip]');
 
     tipArea.innerText = tipInput.value || 'Nenhuma';
@@ -31,29 +49,17 @@ export default function initGame() {
       }
     });
 
-    keyboardButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        initHandleClickBtnKeyboard(button, wordArray);
-        console.log('Inicial' + globalVariables.hits);
-      });
+    globalVariables.keyboardButtons().forEach((button) => {
+      console.log('Add Listeners');
+
+      function teste() {
+        console.log('teste');
+        initHandleClickBtnKeyboard(button, wordArray, teste);
+      }
+
+      button.addEventListener('click', teste);
     });
   }
 
-  function handleClickModal(e) {
-    e.preventDefault();
-
-    if (wordInput.value.length > 0) {
-      wordArray = wordInput.value.split('');
-      initialModal.remove();
-      generateLettersBox();
-    } else {
-      alertMessage = document.createElement('div');
-      alertMessage.innerText = 'Necessário inserir uma palavra!';
-      alertMessage.classList.add('alert-message-form');
-
-      wordInput.style.borderColor = '#ff3131';
-    }
-  }
-
-  formInitial.addEventListener('submit', handleClickModal);
+  formInitial.addEventListener('submit', handleClickInitGame);
 }
