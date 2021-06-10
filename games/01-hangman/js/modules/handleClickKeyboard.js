@@ -19,8 +19,12 @@ export default function initHandleClickBtnKeyboard(elementTarget) {
 
     // Check if the player's number of chances reached (atingiu) 0
     if (!listHeartActive.length) {
+      console.log('Acabou');
       globalVariables.keyboardButtons().forEach((button) => {
-        button.removeEventListener('click', globalVariables.teste2);
+        button.removeEventListener(
+          'click',
+          globalVariables.toggleEventListener,
+        );
       });
     }
 
