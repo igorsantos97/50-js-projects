@@ -31,6 +31,7 @@ export default function initHandleClickBtnKeyboard(elementTarget) {
     return;
   }
 
+  // Filling letter box
   globalVariables.wordArray.forEach((letter, index) => {
     if (valueButton.toLowerCase() === letter.toLowerCase()) {
       wordBoxs[index].innerText = valueButton;
@@ -45,6 +46,10 @@ export default function initHandleClickBtnKeyboard(elementTarget) {
     );
 
     concluedModal.classList.add('active');
+
+    globalVariables.keyboardButtons().forEach((button) => {
+      button.removeEventListener('click', globalVariables.toggleEventListener);
+    });
 
     initCloseModalResultFinal();
   }
