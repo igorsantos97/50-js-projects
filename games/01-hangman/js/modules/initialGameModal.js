@@ -1,4 +1,3 @@
-import initHandleClickBtnKeyboard from './handleClickKeyboard.js';
 import { globalVariables } from './globalVariables.js';
 
 export default function initGame() {
@@ -7,13 +6,11 @@ export default function initGame() {
   const wordInput = formInitial.querySelector('[data-modal="word-input"]');
   const tipInput = formInitial.querySelector('[data-modal="tip-input"]');
 
-  let wordArray;
-
   function handleClickInitGame(e) {
     e.preventDefault();
 
     if (wordInput.value.length > 0) {
-      wordArray = wordInput.value
+      globalVariables.wordArray = wordInput.value
         .split('')
         .map((letter) => letter.toLowerCase());
 
@@ -34,7 +31,7 @@ export default function initGame() {
 
     tipArea.innerText = tipInput.value || 'Nenhuma';
 
-    wordArray.forEach((letter) => {
+    globalVariables.wordArray.forEach((letter) => {
       switch (letter) {
         case ' ':
           wordContainer.innerHTML += `<div data-word="letter" class="word-letter none"></div>`;
@@ -50,14 +47,7 @@ export default function initGame() {
     });
 
     globalVariables.keyboardButtons().forEach((button) => {
-      console.log('Add Listeners');
-
-      function teste() {
-        console.log('teste');
-        initHandleClickBtnKeyboard(button, wordArray, teste);
-      }
-
-      button.addEventListener('click', teste);
+      button.addEventListener('click', globalVariables.toggleEventListener);
     });
   }
 
