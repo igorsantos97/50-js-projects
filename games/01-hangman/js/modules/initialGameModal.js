@@ -1,3 +1,4 @@
+import generateLettersBox from './generateLettersBox.js';
 import { globalVariables } from './globalVariables.js';
 
 export default function initGame() {
@@ -15,40 +16,14 @@ export default function initGame() {
         .map((letter) => letter.toLowerCase());
 
       initialModal.remove();
-      generateLettersBox();
+      generateLettersBox(tipInput);
     } else {
-      alertMessage = document.createElement('div');
+      let alertMessage = document.createElement('div');
       alertMessage.innerText = 'Necessário inserir uma palavra!';
       alertMessage.classList.add('alert-message-form');
 
       wordInput.style.borderColor = '#ff3131';
     }
-  }
-
-  function generateLettersBox() {
-    const wordContainer = document.querySelector('[data-word="container"]');
-    const tipArea = document.querySelector('[data-tip]');
-
-    tipArea.innerText = tipInput.value || 'Nenhuma';
-
-    globalVariables.wordArray.forEach((letter) => {
-      switch (letter) {
-        case ' ':
-          wordContainer.innerHTML += `<div data-word="letter" class="word-letter none"></div>`;
-          globalVariables.hits++;
-          break;
-        case '-':
-          wordContainer.innerHTML += `<div data-word="letter" class="word-letter">-</div>`;
-          globalVariables.hits++;
-          break;
-        default:
-          wordContainer.innerHTML += `<div data-word="letter" class="word-letter"></div>`;
-      }
-    });
-
-    globalVariables.keyboardButtons().forEach((button) => {
-      button.addEventListener('click', globalVariables.toggleEventListener);
-    });
   }
 
   formInitial.addEventListener('submit', handleClickInitGame);
