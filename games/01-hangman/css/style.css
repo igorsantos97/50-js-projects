@@ -48,7 +48,7 @@ button[type='submit'] {
   border-radius: 2px;
   color: #fff;
   font-size: 16px;
-  height: 42px;
+  height: 45px;
   margin-top: 20px;
   transition: 0.3s;
   text-transform: uppercase;
@@ -64,16 +64,22 @@ input {
   border-radius: 2px;
   display: block;
   font-size: 16px;
-  height: 42px;
+  height: 45px;
   margin: 4px 0 14px;
-  padding: 12px 6px;
+  padding: 10px 14px;
   width: 100%;
 }
 
 .title-modal {
   color: #333;
   font-size: 16px;
+  line-height: 1.3;
+  margin-bottom: 6px;
   text-transform: uppercase;
+}
+
+.title-modal span {
+  font-size: 12px;
 }
 
 @keyframes toRight {
@@ -114,8 +120,8 @@ input {
 }
 
 .modal-content h2 {
-  position: absolute;
-  top: 32px;
+  margin-bottom: 32px;
+  text-align: center;
   text-transform: uppercase;
   color: #333;
 }
@@ -393,6 +399,11 @@ input {
 .main .actions-right {
   background: #e24f47;
   padding: 16px;
+}
+
+.word-modal img {
+  display: block;
+  margin: 8px auto 6px;
 }
 
 .word-modal form {

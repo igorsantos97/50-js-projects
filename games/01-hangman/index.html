@@ -23,7 +23,7 @@
           </button>
           <nav data-menu="nav" data-menu="nav">
             <ul>
-              <li><a href="#">Reiniciar Jogo</a></li>
+              <li><a href="./index.html">Reiniciar Jogo</a></li>
             </ul>
           </nav>
         </div>
@@ -94,10 +94,13 @@
 
   <div class="modal word-modal" data-modal="initial">
     <div class="modal-content">
-      <img src="https://image.flaticon.com/icons/png/512/777/777115.png" style="width: 36px; margin-top: -40px; margin-bottom: 13px;" alt="">
-      <h2>Seja bem-vindo</h2>
       <form data-modal="form">
-        <h3 class="title-modal">Digite a palavra a ser descoberta:</h3>
+        <img src="https://image.flaticon.com/icons/png/512/777/777115.png" style="width: 36px;" alt="">
+        <h2>Seja bem-vindo</h2>
+        <h3 class="title-modal">
+          Digite a palavra a ser descoberta<br />
+          <span>(letras sem acentuação):</span>
+        </h3>
         <input data-modal="word-input" type="text" autofocus required placeholder="Ex: Barcelona">
         <h3 class="title-modal">Se quiser, insira uma dica:</h3>
         <input data-modal="tip-input" type="text" placeholder="Ex: Espanha">
@@ -109,7 +112,16 @@
   <div class="modal conclued-modal" data-conclued-modal="container">
     <div class="modal-content">
       <img src="https://image.flaticon.com/icons/png/128/2829/2829661.png">
-      <h3>Parabéns você conseguiu :)</h3>
+      <h3>Parabéns, você conseguiu :)</h3>
+      <p><strong></strong></p>
+      <button class="btn-close" data-conclued-modal="close">X</button>
+    </div>
+  </div>
+
+  <div class="modal conclued-modal lost-modal" data-conclued-modal="container">
+    <div class="modal-content">
+      <!-- <img src="https://image.flaticon.com/icons/png/128/2829/2829661.png"> -->
+      <h3>Parabéns, você não conseguiu :(</h3>
       <p><strong></strong></p>
       <button class="btn-close" data-conclued-modal="close">X</button>
     </div>
