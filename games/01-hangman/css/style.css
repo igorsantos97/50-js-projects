@@ -38,27 +38,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
-}
-
-button[type='submit'] {
-  background: #17c717;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 16px;
-  height: 45px;
-  margin-top: 20px;
-  transition: 0.3s;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-button[type='submit']:hover, button[type='submit']:focus {
-  background: #0fad0f;
-}
-
 input {
   border: solid 1.5px;
   border-radius: 2px;
@@ -76,6 +55,7 @@ input {
   line-height: 1.3;
   margin-bottom: 6px;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .title-modal span {
@@ -113,17 +93,69 @@ input {
   display: flex;
   flex-direction: column;
   height: 440px;
-  justify-content: center;
   opacity: 0;
   padding: 32px 22px;
   width: 460px;
 }
 
-.modal-content h2 {
-  margin-bottom: 32px;
+.modal-header {
+  background: #f3f3f3;
+  padding: 4px;
+  text-align: center;
+  width: 100%;
+}
+
+.modal-header h2 {
+  color: #333;
+  font-size: 20px;
   text-align: center;
   text-transform: uppercase;
-  color: #333;
+}
+
+.modal-body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-body p {
+  font-size: 18px;
+}
+
+.modal-body p span {
+  color: #e14e46;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.modal-footer {
+  width: 100%;
+}
+
+.modal-footer button,
+.modal-footer a {
+  align-items: center;
+  background: #e24f47;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  height: 45px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.modal-footer button:hover, .modal-footer button:focus,
+.modal-footer a:hover,
+.modal-footer a:focus {
+  background: #bd3f38;
 }
 
 .modal .btn-close {
@@ -132,6 +164,7 @@ input {
   border-radius: 50%;
   box-shadow: 0 0 0 2px #e24f47;
   color: #fff;
+  cursor: pointer;
   font-size: 22px;
   height: 50px;
   position: absolute;
@@ -148,6 +181,15 @@ input {
   display: flex;
 }
 
+.conclued-modal .modal-content img:nth-child(1) {
+  width: 50px;
+}
+
+.conclued-modal .modal-content img:nth-child(2) {
+  margin-top: -34px;
+  width: 80px;
+}
+
 .conclued-modal h3 {
   color: #333;
   font-size: 24px;
@@ -155,7 +197,7 @@ input {
 }
 
 .conclued-modal img {
-  margin-bottom: 32px;
+  margin: 8px auto 6px;
 }
 
 .fa-heart {
@@ -232,6 +274,7 @@ input {
   background: #e24f47;
   border: none;
   border-radius: 50%;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -358,10 +401,11 @@ input {
 }
 
 .main .actions-left h2 {
+  color: #fff;
   font-size: 18px;
   margin-bottom: 16px;
   text-transform: uppercase;
-  color: #fff;
+  line-height: 0.9;
 }
 
 .main .actions-left .keyboard {
@@ -375,6 +419,7 @@ input {
   background: #ece7c9;
   border: 2px solid #ece7c9;
   border-radius: 4px;
+  cursor: pointer;
   color: #222;
   height: 42px;
   font-size: 20px;
@@ -403,7 +448,8 @@ input {
 
 .word-modal img {
   display: block;
-  margin: 8px auto 6px;
+  margin: 0px auto 6px;
+  width: 50px;
 }
 
 .word-modal form {
